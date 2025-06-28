@@ -81,13 +81,15 @@ const AuthForm = ({ type }: { type: FormType }) => {
           return;
         }
 
-        await signIn({
-          email,
-          idToken,
+        await fetch("/api/sign-in", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ idToken }),
+          credentials: "include",
         });
 
         toast.success("Signed in successfully.");
-        router.push("/");
+        window.location.href = "/"; // Force reload to send cookie to server
       }
     } catch (error) {
       console.log(error);

@@ -101,6 +101,7 @@ export async function getCurrentUser(): Promise<User | null> {
   const cookieStore = await cookies();
 
   const sessionCookie = cookieStore.get("session")?.value;
+  console.log("Session cookie value:", sessionCookie); // Debug log
   if (!sessionCookie) return null;
 
   try {
@@ -111,7 +112,19 @@ export async function getCurrentUser(): Promise<User | null> {
       .collection("users")
       .doc(decodedClaims.uid)
       .get();
-    if (!userRecord.exists) return null;
+    if (!userRecord.exists) {
+      // Auto-create user document if missing
+      const userData = {
+        name: decodedClaims.name || "",
+        email: decodedClaims.email || "",
+      };
+      await db.collection("users").doc(decodedClaims.uid).set(userData);
+      console.log("User document auto-created for UID:", decodedClaims.uid);
+      return {
+        ...userData,
+        id: decodedClaims.uid,
+      } as User;
+    }
 
     return {
       ...userRecord.data(),
