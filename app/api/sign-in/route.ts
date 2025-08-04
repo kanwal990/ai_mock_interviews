@@ -22,3 +22,15 @@ export async function POST(req: NextRequest) {
 
   return response;
 }
+
+export async function DELETE() {
+  const response = new NextResponse(JSON.stringify({ success: true }));
+  response.cookies.set("session", "", {
+    maxAge: 0,
+    httpOnly: true,
+    secure: false, // Always false for local development
+    path: "/",
+    sameSite: "lax",
+  });
+  return response;
+}
