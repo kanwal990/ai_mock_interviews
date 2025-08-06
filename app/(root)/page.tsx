@@ -9,6 +9,7 @@ import {
   getInterviewsByUserId,
   getLatestInterviews,
 } from "@/lib/actions/general.action";
+import Footer from "@/components/Footer";
 
 async function Home() {
   const user = await getCurrentUser();
@@ -87,6 +88,8 @@ async function Home() {
           )}
         </div>
       </section>
+
+      <Footer />
     </>
   );
 }
