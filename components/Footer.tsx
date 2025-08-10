@@ -1,18 +1,18 @@
 function Footer() {
     return (
-        <footer className="bg-black-100 text-white py-4">
+        <footer className="text-black py-4">
             <div className="container mx-auto px-4">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center space-y-4 md:space-y-0">
 
                     {/* Left Section - About Info */}
                     <div className="flex-1">
                         <h3 className="text-lg font-semibold mb-2">About Us</h3>
-                        <p className="text-gray-300 text-sm max-w-md">
+                        <p className="text-black text-sm max-w-md">
                             We are dedicated to providing exceptional services and creating
                             meaningful experiences for our customers. Building connections
                             that matter since day one.
                         </p>
-                        <p className="text-gray-400 text-xs mt-2">
+                        <p className="text-black text-xs mt-2">
                             © 2024 Company Name. All rights reserved.
                         </p>
                     </div>
@@ -23,7 +23,7 @@ function Footer() {
                         <div className="flex space-x-4">
                             <a
                                 href="#"
-                                className="text-gray-300 hover:text-white transition-colors duration-200"
+                                className="text-black hover:text-white transition-colors duration-200"
                                 aria-label="Facebook"
                             >
                                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -32,7 +32,7 @@ function Footer() {
                             </a>
                             <a
                                 href="#"
-                                className="text-gray-300 hover:text-white transition-colors duration-200"
+                                className="text-black hover:text-white transition-colors duration-200"
                                 aria-label="Twitter"
                             >
                                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -41,7 +41,7 @@ function Footer() {
                             </a>
                             <a
                                 href="#"
-                                className="text-gray-300 hover:text-white transition-colors duration-200"
+                                className="text-black hover:text-white transition-colors duration-200"
                                 aria-label="LinkedIn"
                             >
                                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -50,7 +50,7 @@ function Footer() {
                             </a>
                             <a
                                 href="#"
-                                className="text-gray-300 hover:text-white transition-colors duration-200"
+                                className="text-black hover:text-white transition-colors duration-200"
                                 aria-label="Instagram"
                             >
                                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">

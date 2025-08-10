@@ -26,7 +26,7 @@ async function Home() {
     <>
       <section className="card-cta">
         <div className="flex flex-col gap-6 max-w-lg">
-          <h2>Get Interview-Ready with AI-Powered Practice & Feedback</h2>
+          <h2 className="text-black">Get Interview-Ready with AI-Powered Practice & Feedback</h2>
           <p className="text-lg">
             Practice real interview questions & get instant feedback
           </p>
@@ -36,13 +36,15 @@ async function Home() {
           </Button>
         </div>
 
-        <Image
-          src="/robot.png"
-          alt="robo-dude"
-          width={400}
-          height={400}
-          className="max-sm:hidden"
-        />
+        <div className="transition-transform duration-500 hover:scale-105 hover:rotate-3 drop-shadow-2xl">
+          <Image
+            src="/robot.png"
+            alt="robo-dude"
+            width={400}
+            height={400}
+            className="max-sm:hidden animate-bounce-slow"
+          />
+        </div>
       </section>
 
       <section className="flex flex-col gap-6 mt-8">
@@ -62,13 +64,13 @@ async function Home() {
               />
             ))
           ) : (
-            <p>You haven&apos;t taken any interviews yet</p>
+            <p className="text-black">You haven&apos;t taken any interviews yet</p>
           )}
         </div>
       </section>
 
       <section className="flex flex-col gap-6 mt-8">
-        <h2>Take Interviews</h2>
+        <h2 className="text-black">Take Interviews</h2>
 
         <div className="interviews-section">
           {hasUpcomingInterviews ? (
@@ -84,7 +86,7 @@ async function Home() {
               />
             ))
           ) : (
-            <p>There are no interviews available</p>
+            <p className="text-black">There are no interviews available</p>
           )}
         </div>
       </section>

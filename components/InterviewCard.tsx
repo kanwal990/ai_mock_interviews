@@ -19,9 +19,9 @@ const InterviewCard = async ({
   const feedback =
     userId && interviewId
       ? await getFeedbackByInterviewId({
-          interviewId,
-          userId,
-        })
+        interviewId,
+        userId,
+      })
       : null;
 
   const normalizedType = /mix/gi.test(type) ? "Mixed" : type;
@@ -38,17 +38,14 @@ const InterviewCard = async ({
   ).format("MMM D, YYYY");
 
   return (
-    <div className="card-border w-[360px] max-sm:w-full min-h-96">
+    <div className="w-[360px] max-sm:w-full min-h-96">
       <div className="card-interview">
         <div>
           {/* Type Badge */}
           <div
-            className={cn(
-              "absolute top-0 right-0 w-fit px-4 py-2 rounded-bl-lg",
-              badgeColor
-            )}
+            className="absolute top-0 right-0 w-fit px-4 py-2 rounded-bl-lg bg-light-800"
           >
-            <p className="badge-text ">{normalizedType}</p>
+            <p className="badge-text">{normalizedType}</p>
           </div>
 
           {/* Cover Image */}
@@ -72,17 +69,17 @@ const InterviewCard = async ({
                 height={22}
                 alt="calendar"
               />
-              <p>{formattedDate}</p>
+              <p className="text-gray-900">{formattedDate}</p>
             </div>
 
             <div className="flex flex-row gap-2 items-center">
               <Image src="/star.svg" width={22} height={22} alt="star" />
-              <p>{feedback?.totalScore || "---"}/100</p>
+              <p className="text-gray-900">{feedback?.totalScore || "---"}/100</p>
             </div>
           </div>
 
           {/* Feedback or Placeholder Text */}
-          <p className="line-clamp-2 mt-5">
+          <p className="text-gray-900 line-clamp-2 mt-5">
             {feedback?.finalAssessment ||
               "You haven't taken this interview yet. Take it now to improve your skills."}
           </p>
