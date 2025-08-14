@@ -20,6 +20,12 @@ const Layout = async ({ children }: { children: ReactNode }) => {
           <h2 className="text-black">PrepWise</h2>
         </Link>
         <div className="flex items-center gap-4">
+          <Link href="/services" className="text-lg font-semibold text-black hover:underline px-3 py-1 rounded hover:bg-cyan-100 transition-colors">
+            Services
+          </Link>
+          <Link href="/admin" className="text-lg font-semibold text-black hover:underline px-3 py-1 rounded hover:bg-cyan-100 transition-colors">
+            Admin
+          </Link>
           {user && (
             <Link href="/profile" className="text-lg font-semibold text-primary-500 hover:underline">
               {user.name}

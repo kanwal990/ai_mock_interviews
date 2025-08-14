@@ -1,29 +1,30 @@
+import React from "react";
 function Footer() {
     return (
-        <footer className="text-black py-4">
-            <div className="container mx-auto px-4">
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-center space-y-4 md:space-y-0">
+        <footer className="bg-gradient-to-r from-cyan-700 to-blue-800 text-white py-8 mt-12 border-t-4 border-cyan-400 shadow-2xl rounded-2xl">
+            <section className="container mx-auto px-4">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-center space-y-8 md:space-y-0">
 
                     {/* Left Section - About Info */}
                     <div className="flex-1">
-                        <h3 className="text-lg font-semibold mb-2">About Us</h3>
-                        <p className="text-black text-sm max-w-md">
+                        <h3 className="text-xl font-bold mb-2 text-cyan-200">About Us</h3>
+                        <p className="text-white/90 text-base max-w-md">
                             We are dedicated to providing exceptional services and creating
                             meaningful experiences for our customers. Building connections
                             that matter since day one.
                         </p>
-                        <p className="text-black text-xs mt-2">
-                            © 2024 Company Name. All rights reserved.
+                        <p className="text-cyan-100 text-xs mt-4">
+                            © 2024 PrepWise. All rights reserved.
                         </p>
                     </div>
 
                     {/* Right Section - Social Links */}
                     <div className="flex-shrink-0">
-                        <h3 className="text-lg font-semibold mb-2">Follow Us</h3>
+                        <h3 className="text-xl font-bold mb-2 text-cyan-200">Follow Us</h3>
                         <div className="flex space-x-4">
                             <a
                                 href="#"
-                                className="text-black hover:text-white transition-colors duration-200"
+                                className="text-cyan-100 hover:text-white transition-colors duration-200"
                                 aria-label="Facebook"
                             >
                                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -32,7 +33,7 @@ function Footer() {
                             </a>
                             <a
                                 href="#"
-                                className="text-black hover:text-white transition-colors duration-200"
+                                className="text-cyan-100 hover:text-white transition-colors duration-200"
                                 aria-label="Twitter"
                             >
                                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -41,7 +42,7 @@ function Footer() {
                             </a>
                             <a
                                 href="#"
-                                className="text-black hover:text-white transition-colors duration-200"
+                                className="text-cyan-100 hover:text-white transition-colors duration-200"
                                 aria-label="LinkedIn"
                             >
                                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -50,7 +51,7 @@ function Footer() {
                             </a>
                             <a
                                 href="#"
-                                className="text-black hover:text-white transition-colors duration-200"
+                                className="text-cyan-100 hover:text-white transition-colors duration-200"
                                 aria-label="Instagram"
                             >
                                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -60,7 +61,7 @@ function Footer() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </footer>
     );
 }

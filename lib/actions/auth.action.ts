@@ -41,6 +41,8 @@ export async function signUp(params: SignUpParams) {
     await db.collection("users").doc(uid).set({
       name,
       email,
+      createdAt: new Date().toISOString(),
+      created: new Date(), // Store as Firestore Timestamp (Date object)
       // profileURL,
       // resumeURL,
     });
@@ -101,7 +103,7 @@ export async function getCurrentUser(): Promise<User | null> {
   const cookieStore = await cookies();
 
   const sessionCookie = cookieStore.get("session")?.value;
-  console.log("Session cookie value:", sessionCookie); // Debug log
+  // console.log("Session cookie value:", sessionCookie); // Debug log
   if (!sessionCookie) return null;
 
   try {
@@ -117,6 +119,8 @@ export async function getCurrentUser(): Promise<User | null> {
       const userData = {
         name: decodedClaims.name || "",
         email: decodedClaims.email || "",
+        createdAt: new Date().toISOString(),
+        created: new Date(), // Store as Firestore Timestamp (Date object)
       };
       await db.collection("users").doc(decodedClaims.uid).set(userData);
       console.log("User document auto-created for UID:", decodedClaims.uid);

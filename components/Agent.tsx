@@ -61,8 +61,22 @@ const Agent = ({
       setIsSpeaking(false);
     };
 
-    const onError = (error: Error) => {
-      console.log("Error:", error);
+
+    const onError = (error: any) => {
+      // Suppress 'Meeting ended due to ejection' errors
+      if (
+        error && typeof error.message === "string" &&
+        error.message.includes("Meeting ended due to ejection")
+      ) {
+        return;
+      }
+      // Log error object and message for better debugging
+      if (error && error.message) {
+        console.error("Agent Error:", error, "Message:", error.message);
+      } else {
+        console.error("Agent Error: Unknown error", error);
+      }
+      // Optionally, set a state to show a user-friendly error message
     };
 
     vapi.on("call-start", onCallStart);
@@ -118,6 +132,7 @@ const Agent = ({
     setCallStatus(CallStatus.CONNECTING);
 
     if (type === "generate") {
+      console.log("Starting generate call with userId:", userId);
       await vapi.start(process.env.NEXT_PUBLIC_VAPI_WORKFLOW_ID!, {
         variableValues: {
           username: userName,
